@@ -378,11 +378,11 @@ body {
 }
 
 /* ==========================================================================
-   SECTION 3: PORTFÓLIO STYLING (Mantido original com 3 Colunas)
+   SECTION 3: PORTFÓLIO STYLING (LAYOUT INSPIRADO NO BANNER)
    ========================================================================== */
 .portfolio-section {
     padding: 100px 60px;
-    background-color: #0c1615; /* Tom intermediário */
+    background-color: #0c1615;
     border-top: 1px solid var(--border-color);
 }
 
@@ -391,63 +391,83 @@ body {
     margin: 0 auto;
 }
 
-.section-header {
+/* 👇 Adicionado para centralizar e alinhar o título e subtítulo */
+.portfolio-section .section-header {
     text-align: center;
     margin-bottom: 60px;
 }
 
-.section-subtitle {
+.portfolio-section .section-subtitle {
     color: var(--primary-green);
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
+    display: inline-block;
+    margin-bottom: 12px;
 }
 
-.section-title {
-    font-size: 2.4rem;
-    font-weight: 700;
-    margin-top: 10px;
-    margin-bottom: 15px;
+.portfolio-section .section-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    line-height: 1.25;
     color: var(--text-white);
+    margin-bottom: 16px;
+    /* 👇 Adicione ou ajuste esta linha para dar mais espaço de largura */
+    max-width: 1000px; /* Ou ajuste para 100% se preferir que o texto ocupe toda a largura disponível */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.section-title .highlight {
+.portfolio-section .section-title .highlight {
     color: var(--primary-green);
 }
 
-.section-description {
+.portfolio-section .section-description {
     color: var(--text-gray);
-    font-size: 1rem;
-    max-width: 600px;
+    font-size: 1.05rem;
+    max-width: 650px;
     margin: 0 auto;
+    line-height: 1.6;
 }
 
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 30px;
+    align-items: stretch;
 }
 
+/* Card Principal (Todos iguais e padronizados) */
 .portfolio-card {
     background-color: var(--bg-dark);
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-    cursor: pointer;
 }
 
+/* Quando o usuário passar o mouse em QUALQUER card, ele ganha o destaque verde */
 .portfolio-card:hover {
     transform: translateY(-6px);
-    border-color: rgba(58, 178, 77, 0.4);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    border-color: var(--primary-green);
+    box-shadow: 0 12px 30px rgba(58, 178, 77, 0.15);
 }
 
+/* Destaque para o Card "Sistema Completo" */
+.portfolio-card.card-destaque {
+    border: 1.5px solid var(--primary-green);
+    background: linear-gradient(180deg, rgba(58, 178, 77, 0.05) 0%, rgba(7, 15, 14, 0.8) 100%);
+    box-shadow: 0 10px 30px rgba(58, 178, 77, 0.15);
+}
+
+/* Mídia e Tags na foto */
 .card-media {
     position: relative;
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 10;
     overflow: hidden;
 }
 
@@ -459,83 +479,142 @@ body {
 }
 
 .portfolio-card:hover .card-media img {
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
 
 .card-tag {
     position: absolute;
-    top: 12px;
-    left: 12px;
+    top: 14px;
+    left: 14px;
     background-color: rgba(7, 15, 14, 0.85);
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(8px);
     color: var(--text-white);
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 4px 10px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 6px 12px;
     border-radius: 20px;
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    letter-spacing: 0.5px;
 }
 
-.card-play-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.25);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.portfolio-card:hover .card-play-overlay {
-    opacity: 1;
-}
-
-.card-play-btn {
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
+.card-tag.tag-destaque {
     background-color: var(--primary-green);
-    color: var(--text-white);
+    color: #ffffff;
+    border: none;
+}
+
+/* Informações do Card */
+.card-info {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-header-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.card-icon-box {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background-color: rgba(58, 178, 77, 0.12);
+    border: 1px solid rgba(58, 178, 77, 0.25);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-left: 3px;
-    box-shadow: 0 4px 12px rgba(58, 178, 77, 0.4);
-    transition: transform 0.2s ease;
-}
-
-.card-play-btn:hover {
-    transform: scale(1.1);
-}
-
-.card-info {
-    padding: 20px;
-}
-
-.card-info h3 {
+    color: var(--primary-green);
     font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.card-header-info h3 {
+    font-size: 1.2rem;
     color: var(--text-white);
-    margin-bottom: 6px;
+    font-weight: 700;
+    line-height: 1.2;
 }
 
-.card-info p {
+.card-subtitle {
     color: var(--text-gray);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    margin-top: 3px;
 }
 
+/* Lista de Features/Entregas */
+.card-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    flex-grow: 1;
+}
+
+.card-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.88rem;
+    color: var(--text-white);
+    font-weight: 500;
+}
+
+.card-features li i {
+    color: var(--primary-green);
+    font-size: 0.95rem;
+}
+
+/* Botão do Card */
+.btn-card-main {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--text-white);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+.btn-card-main:hover {
+    background-color: rgba(58, 178, 77, 0.15);
+    border-color: var(--primary-green);
+    color: var(--text-white);
+}
+
+.btn-card-main.btn-full {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+}
+
+.btn-card-main.btn-full:hover {
+    background-color: var(--primary-green-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(58, 178, 77, 0.3);
+}
+
+/* Responsividade */
 @media (max-width: 992px) {
-    .portfolio-section {
-        padding: 80px 30px;
-    }
     .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        grid-template-columns: 1fr;
+        gap: 24px;
     }
 }
+
+
 
 @media (max-width: 576px) {
     .portfolio-section {
@@ -1405,6 +1484,15 @@ body {
     .cta-title {
         font-size: 2.2rem;
     }
+
+    /* 👇 ADICIONE / AJUSTE ESTA REGRA AQUI DENTRO DO MOBILE 👇 */
+    .sites-features {
+        align-items: flex-start; /* Alinha os ícones de check entre si */
+        margin-left: auto;       /* Centraliza o bloco todo no meio da tela */
+        margin-right: auto;
+        width: fit-content;      /* Encolhe o bloco para o tamanho exato do texto */
+        text-align: left;        /* Garante que o texto fique natural */
+    }
     
     .footer-container {
         grid-template-columns: 1fr; /* Empilha as colunas no mobile */
@@ -1603,3 +1691,4 @@ body {
     font-size: 0.85rem;
     margin: 0;
 }
+
