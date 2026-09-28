@@ -600,6 +600,65 @@
 
 
         /* =========================================================
+           360° GATEWAY
+        ========================================================= */
+
+        .tour-gateway {
+            padding: 55px 0 120px;
+            background: var(--bg);
+        }
+
+        .tour-gateway-inner {
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            padding: 48px 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .tour-gateway h2 {
+            font-size: clamp(3rem, 5vw, 6rem);
+            line-height: .88;
+            letter-spacing: -.075em;
+        }
+
+        .tour-gateway h2 em {
+            font-style: normal;
+            color: var(--green-light);
+        }
+
+        .tour-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 18px;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(143,201,176,.45);
+            color: var(--green-light);
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            transition: .3s ease;
+            white-space: nowrap;
+        }
+
+        .tour-link span {
+            font-size: 16px;
+            transition: transform .3s ease;
+        }
+
+        .tour-link:hover {
+            color: white;
+            border-color: var(--green-light);
+        }
+
+        .tour-link:hover span {
+            transform: translate(4px, -4px);
+        }
+
+        /* =========================================================
            BIG IDEA
         ========================================================= */
 
@@ -785,7 +844,35 @@
         .foot {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             gap: 30px;
+        }
+
+        .foot-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .foot-sub {
+            color: #4f5b56;
+        }
+
+        .foot-links {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .foot-links a {
+            color: #89938e;
+            transition: color .3s ease;
+        }
+
+        .foot-links a:hover {
+            color: var(--green-light);
         }
 
 
@@ -1025,6 +1112,23 @@
                 padding: 30px;
             }
 
+            .tour-gateway {
+                padding: 25px 0 80px;
+            }
+
+            .tour-gateway-inner {
+                display: block;
+                padding: 34px 0;
+            }
+
+            .tour-gateway h2 {
+                font-size: clamp(2.8rem, 10vw, 4.5rem);
+            }
+
+            .tour-link {
+                margin-top: 30px;
+            }
+
             .big-idea h2 {
                 font-size: clamp(2.8rem, 8vw, 4.5rem);
             }
@@ -1035,8 +1139,17 @@
 
             .foot {
                 flex-direction: column;
-                gap: 10px;
+                gap: 18px;
                 text-align: center;
+            }
+
+            .foot-brand {
+                align-items: center;
+            }
+
+            .foot-links {
+                justify-content: center;
+                gap: 12px 18px;
             }
         }
 
@@ -1058,6 +1171,7 @@
             <div class="links">
                 <a href="#projetos">Projetos</a>
                 <a href="#servicos">Serviços</a>
+                <a href="/360/">360°</a>
                 <a class="nav-cta" href="#contato">Falar sobre meu projeto ↗</a>
             </div>
         </div>
@@ -1212,6 +1326,18 @@
             </article>
         </section>
 
+        <section class="tour-gateway">
+            <div class="container tour-gateway-inner reveal">
+                <div>
+                    <div class="kicker">Experiências imersivas</div>
+                    <h2>Explore os projetos<br><em>em 360°.</em></h2>
+                </div>
+                <a class="tour-link" href="/360/">
+                    Ver galeria 360° <span>↗</span>
+                </a>
+            </div>
+        </section>
+
         <section class="big-idea">
             <div class="container inner reveal">
                 <div class="kicker">
@@ -1343,8 +1469,17 @@
 
     <footer>
         <div class="container foot">
-            <span>© 2026 TRENDLOCAL SEO</span>
-            <span>SEO LOCAL / PERFIL DO GOOGLE / SITES / REDES SOCIAIS / 360° / GOOGLE ADS</span>
+            <div class="foot-brand">
+                <span>© 2026 TRENDLOCAL SEO</span>
+                <span class="foot-sub">Presença digital para negócios locais.</span>
+            </div>
+
+            <div class="foot-links" aria-label="Canais da TrendLocal">
+                <a href="https://www.instagram.com/niktrendlocalseo/" target="_blank" rel="noopener">Instagram ↗</a>
+                <a href="https://www.facebook.com/profile.php?id=100089372402837" target="_blank" rel="noopener">Facebook ↗</a>
+                <a href="https://www.google.com.br/maps/place/Trendlocal+SEO/@-23.326328,-46.2367015,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce810035c6ff07:0x620d4791164bb704!8m2!3d-23.3263329!4d-46.2341266!16s%2Fg%2F11md37bd27?entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Google Maps ↗</a>
+                <a href="https://wa.me/5511999814081" target="_blank" rel="noopener">WhatsApp ↗</a>
+            </div>
         </div>
     </footer>
 
