@@ -122,19 +122,6 @@
             transition: color .3s;
         }
 
-        .nav-cta {
-            border: 1px solid rgba(143,201,176,.5);
-            padding: 11px 16px;
-            color: var(--green-light);
-            transition: .3s ease;
-        }
-
-        .nav-cta:hover {
-            background: var(--green);
-            color: white;
-            border-color: var(--green);
-        }
-
         /* PAGE HEADER */
         .page-header {
             padding: 160px 0 60px;
@@ -339,6 +326,10 @@
             .tours-grid {
                 grid-template-columns: 1fr;
             }
+            .links {
+                gap: 15px !important;
+                font-size: 9px !important;
+            }
             .foot {
                 flex-direction: column;
                 gap: 18px;
@@ -366,7 +357,6 @@
                 <a href="../#projetos">Projetos</a>
                 <a href="../#servicos">Serviços</a>
                 <a href="./" style="color:var(--green-light)">360°</a>
-                <a class="nav-cta" href="../#contato">Falar sobre meu projeto ↗</a>
             </div>
         </div>
     </nav>

@@ -225,17 +225,9 @@
             text-transform: uppercase;
         }
 
-        .nav-cta {
-            border: 1px solid rgba(143,201,176,.5);
-            padding: 11px 16px;
+        .links a:hover {
             color: var(--green-light);
-            transition: .3s ease;
-        }
-
-        .nav-cta:hover {
-            background: var(--green);
-            color: white;
-            border-color: var(--green);
+            transition: color .3s;
         }
 
 
@@ -485,7 +477,7 @@
 
 
         /* =========================================================
-           PORTFÓLIO (DE PONTA A PONTA)
+           PORTFÓLIO E CARD 360 (PADRONIZADOS)
         ========================================================= */
 
         .work {
@@ -526,6 +518,7 @@
             margin: 0 auto 18px;
             overflow: hidden;
             background: #111;
+            display: block;
         }
 
         .case img {
@@ -572,6 +565,7 @@
             font-size: clamp(3rem, 6vw, 6.5rem);
             line-height: .84;
             letter-spacing: -.075em;
+            color: #fff;
         }
 
         .case-meta {
@@ -591,6 +585,7 @@
             letter-spacing: .1em;
             text-transform: uppercase;
             transition: .3s;
+            color: #fff;
         }
 
         .case:hover .case-tag {
@@ -598,65 +593,6 @@
             border-color: var(--green);
         }
 
-
-        /* =========================================================
-           360° GATEWAY
-        ========================================================= */
-
-        .tour-gateway {
-            padding: 55px 0 120px;
-            background: var(--bg);
-        }
-
-        .tour-gateway-inner {
-            border-top: 1px solid var(--line);
-            border-bottom: 1px solid var(--line);
-            padding: 48px 0;
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            gap: 40px;
-        }
-
-        .tour-gateway h2 {
-            font-size: clamp(3rem, 5vw, 6rem);
-            line-height: .88;
-            letter-spacing: -.075em;
-        }
-
-        .tour-gateway h2 em {
-            font-style: normal;
-            color: var(--green-light);
-        }
-
-        .tour-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 18px;
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(143,201,176,.45);
-            color: var(--green-light);
-            font-family: "DM Mono", monospace;
-            font-size: 10px;
-            letter-spacing: .12em;
-            text-transform: uppercase;
-            transition: .3s ease;
-            white-space: nowrap;
-        }
-
-        .tour-link span {
-            font-size: 16px;
-            transition: transform .3s ease;
-        }
-
-        .tour-link:hover {
-            color: white;
-            border-color: var(--green-light);
-        }
-
-        .tour-link:hover span {
-            transform: translate(4px, -4px);
-        }
 
         /* =========================================================
            BIG IDEA
@@ -971,14 +907,14 @@
 
 
         /* =========================================================
-           MOBILE (CORRIGIDO PARA O POCO F7)
+           MOBILE
         ========================================================= */
 
         @media (max-width: 760px) {
             :root {
                 --side-space: 20px;
             }
-            /* Adicione estas linhas logo abaixo para descer a faixa verde */
+
             .service-strip {
                 margin-top: 70px; 
             }
@@ -995,31 +931,22 @@
                 position: relative !important;
                 display: flex !important;
                 align-items: center !important;
-                justify-content: center !important;
+                justify-content: space-between !important;
                 width: 100% !important;
                 height: 70px !important;
-                padding: 0 !important;
+                padding: 0 15px !important;
                 margin: 0 !important;
             }
 
-            .nav > a[aria-label="TrendLocal"] {
-                position: absolute !important;
-                left: 50% !important;
-                top: 50% !important;
-                width: max-content !important;
-                height: max-content !important;
-                transform: translate(-50%, -50%) !important;
-                z-index: 101 !important;
-            }
-
-            .nav > a[aria-label="TrendLocal"] .brand-logo {
-                display: block !important;
-                width: auto !important;
-                height: 120px !important;
+            .brand-logo {
+                height: 100px !important;
+                margin: 0 !important;
             }
 
             .links {
-                display: none !important;
+                display: flex !important;
+                gap: 15px !important;
+                font-size: 9px !important;
             }
 
             .hero {
@@ -1033,7 +960,6 @@
                 letter-spacing: -.065em;
             }
 
-            /* Correção das Grids que quebravam o layout para a direita no mobile */
             .grid-label {
                 grid-template-columns: 1fr !important;
                 gap: 20px !important;
@@ -1112,23 +1038,6 @@
                 padding: 30px;
             }
 
-            .tour-gateway {
-                padding: 25px 0 80px;
-            }
-
-            .tour-gateway-inner {
-                display: block;
-                padding: 34px 0;
-            }
-
-            .tour-gateway h2 {
-                font-size: clamp(2.8rem, 10vw, 4.5rem);
-            }
-
-            .tour-link {
-                margin-top: 30px;
-            }
-
             .big-idea h2 {
                 font-size: clamp(2.8rem, 8vw, 4.5rem);
             }
@@ -1152,12 +1061,6 @@
                 gap: 12px 18px;
             }
         }
-
-        @media (max-width: 380px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-        }
     </style>
 </head>
 
@@ -1172,7 +1075,6 @@
                 <a href="#projetos">Projetos</a>
                 <a href="#servicos">Serviços</a>
                 <a href="/360/">360°</a>
-                <a class="nav-cta" href="#contato">Falar sobre meu projeto ↗</a>
             </div>
         </div>
     </nav>
@@ -1256,7 +1158,7 @@
                         </h2>
                     </div>
                     <div class="counter">
-                        04 PROJETOS / EM DESTAQUE
+                        05 PROJETOS / EM DESTAQUE
                     </div>
                 </div>
             </div>
@@ -1324,18 +1226,23 @@
                     </div>
                 </div>
             </article>
-        </section>
 
-        <section class="tour-gateway">
-            <div class="container tour-gateway-inner reveal">
-                <div>
-                    <div class="kicker">Experiências imersivas</div>
-                    <h2>Explore os projetos<br><em>em 360°.</em></h2>
+            <!-- NOVO CARD 360 PADRONIZADO NO FINAL DOS PROJETOS -->
+            <article class="case zoom-reveal">
+                <img loading="lazy" src="/360/img/card-360.webp"
+                    alt="Galeria de tours virtuais 360 graus da TrendLocal SEO">
+                <div class="case-info">
+                    <div>
+                        <div class="case-num">05 / EXPERIÊNCIAS IMERSIVAS</div>
+                        <h3>Galeria de Tours<br>e Fotos 360°</h3>
+                    </div>
+                    <div class="case-meta">
+                        Explore ambientes em imersão total<br>
+                        Veja todos os locais fotografados
+                        <a href="/360/" class="case-tag">Ver galeria completa ↗</a>
+                    </div>
                 </div>
-                <a class="tour-link" href="/360/">
-                    Ver galeria 360° <span>↗</span>
-                </a>
-            </div>
+            </article>
         </section>
 
         <section class="big-idea">
