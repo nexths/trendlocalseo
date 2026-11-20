@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Galeria de Tours Virtuais 360° e Fotografias Esféricas da TrendLocal SEO. Conheça projetos imersivos de empresas, comércios e espaços.">
+    <meta name="description" content="Explore tours virtuais e fotos 360° de restaurantes, espaços de eventos, chalés e comércios no portfólio da TrendLocal SEO em Santa Isabel e região.">
 
-    <title>Galeria 360° | TrendLocal SEO</title>
+    <title>Tours Virtuais e Fotos 360° em Santa Isabel | TrendLocal SEO</title>
     <link rel="canonical" href="https://trendlocalseo.com.br/360/">
 
     <meta name="robots" content="index, follow, max-image-preview:large">
@@ -15,8 +15,8 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:site_name" content="TrendLocal SEO">
-    <meta property="og:title" content="Galeria de Tours 360° | TrendLocal SEO">
-    <meta property="og:description" content="Explore tours virtuais 360° e experiências imersivas criadas pela TrendLocal SEO.">
+    <meta property="og:title" content="Tours Virtuais e Fotos 360° em Santa Isabel | TrendLocal SEO">
+    <meta property="og:description" content="Explore tours virtuais e fotos 360° de restaurantes, espaços de eventos, chalés e comércios no portfólio da TrendLocal SEO em Santa Isabel e região.">
     <meta property="og:url" content="https://trendlocalseo.com.br/360/">
     <meta property="og:image" content="https://trendlocalseo.com.br/hero.jpg">
 
@@ -25,6 +25,46 @@
     <link rel="icon" type="image/png" href="../logo1.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://trendlocalseo.com.br/360/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Início",
+              "item": "https://trendlocalseo.com.br/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Tours virtuais e fotos 360°",
+              "item": "https://trendlocalseo.com.br/360/"
+            }
+          ]
+        },
+        {
+          "@type": "CollectionPage",
+          "@id": "https://trendlocalseo.com.br/360/#webpage",
+          "url": "https://trendlocalseo.com.br/360/",
+          "name": "Tours Virtuais e Fotos 360° em Santa Isabel | TrendLocal SEO",
+          "description": "Explore tours virtuais e fotos 360° de restaurantes, espaços de eventos, chalés e comércios no portfólio da TrendLocal SEO em Santa Isabel e região.",
+          "isPartOf": {
+            "@id": "https://trendlocalseo.com.br/#website"
+          },
+          "inLanguage": "pt-BR",
+          "breadcrumb": {
+            "@id": "https://trendlocalseo.com.br/360/#breadcrumb"
+          }
+        }
+      ]
+    }
+    </script>
 
     <style>
         :root {
@@ -254,7 +294,7 @@
         }
 
         /* ANIMAÇÃO DE ENTRADA SUAVE (REVEAL) */
-        .reveal {
+        .animations-enabled .reveal {
             opacity: 0;
             transform: translateY(30px);
             filter: blur(6px);
@@ -344,6 +384,12 @@
                 gap: 12px 18px;
             }
         }
+
+        .page-faq { padding-block: clamp(36px, 7vw, 84px); overflow-wrap: anywhere; }
+        .page-faq details { border-top: 1px solid currentColor; padding-block: 14px; }
+        .page-faq summary { cursor: pointer; font-weight: 700; }
+        .page-faq details p { max-width: 74ch; margin-block: 10px 0; }
+        .page-faq a { text-decoration: underline; text-underline-offset: .2em; }
     </style>
 </head>
 
@@ -366,13 +412,14 @@
         <header class="page-header">
             <div class="container reveal">
                 <div class="kicker">Experiências Imersivas 360°</div>
-                <h1>Galeria de Tours<br><span>e Fotos Panorâmicas.</span></h1>
+                <h1>Galeria de Tours Virtuais<br><span>e Fotos 360°</span></h1>
                 <p>Navegue pelos projetos imersivos desenvolvidos para apresentar comércios, espaços de eventos e estabelecimentos de forma completa.</p>
             </div>
         </header>
 
-        <section class="tours-grid-section">
+        <section class="tours-grid-section" aria-labelledby="tour-projects">
             <div class="container">
+                <h2 id="tour-projects">Projetos de fotografia e tour virtual 360°</h2>
                 <div class="tours-grid">
 
                     <!-- 1. Espaço Verde Arujá -->
@@ -513,6 +560,21 @@
                 </div>
             </div>
         </section>
+        <section class="container page-faq" aria-labelledby="faq-heading">
+            <h2 id="faq-heading">Perguntas frequentes</h2>
+            <details>
+                <summary>Qual é a diferença entre uma foto 360° e um tour virtual?</summary>
+                <p>Uma foto 360° mostra o espaço a partir de um ponto. Um tour virtual pode ligar vários pontos, permitindo navegar entre ambientes e explorar o local.</p>
+            </details>
+            <details>
+                <summary>Que tipos de espaços aparecem na galeria?</summary>
+                <p>A galeria reúne projetos de chácaras para eventos, chalés, marina, cafés, padaria e outros comércios. Abra um projeto acima para explorar os ambientes.</p>
+            </details>
+            <details>
+                <summary>Posso colocar um tour no meu site ou no Google Maps?</summary>
+                <p>O tour pode ser disponibilizado por link e integrado ao seu <a href="/#servicos">site ou landing page</a>, conforme o projeto. A publicação no Street View segue requisitos próprios. Para vídeos 360°, consulte o <a href="https://support.google.com/maps/answer/7546470?hl=pt-BR">guia do Street View Studio</a>.</p>
+            </details>
+        </section>
     </main>
 
     <footer>
@@ -533,24 +595,27 @@
 
     <!-- SCRIPT DE ANIMAÇÃO DE ENTRADA -->
     <script>
-        const observer = new IntersectionObserver(
-            entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("show");
-                        observer.unobserve(entry.target);
-                    }
-                });
-            },
-            {
-                threshold: .1,
-                rootMargin: "0px 0px -30px 0px"
-            }
-        );
+        if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            const observer = new IntersectionObserver(
+                entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("show");
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                {
+                    threshold: .1,
+                    rootMargin: "0px 0px -30px 0px"
+                }
+            );
 
-        document.querySelectorAll(".reveal").forEach(element => {
-            observer.observe(element);
-        });
+            document.querySelectorAll(".reveal").forEach(element => {
+                observer.observe(element);
+            });
+            document.documentElement.classList.add('animations-enabled');
+        }
     </script>
 
 </body>
